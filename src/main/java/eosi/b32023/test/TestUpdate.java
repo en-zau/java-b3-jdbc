@@ -9,7 +9,7 @@ public class TestUpdate {
     Connection cnx;
     PreparedStatement ps;
 
-    TestUpdate(Connection cnx, PreparedStatement ps){
+    public TestUpdate(Connection cnx, PreparedStatement ps){
         this.cnx = cnx;
         this.ps = ps;
     }
