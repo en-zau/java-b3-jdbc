@@ -5,22 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7659db1-ea7b-43c5-87c4-737464156a24" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/eosi/b32023/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/eosi/b32023/bo/Fournisseur.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/eosi/b32023/dal/FournisseurDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/eosi/b32023/dal/FournisseurJDBCDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/eosi/b32023/test/TestDelete.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/eosi/b32023/test/TestInserion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/eosi/b32023/test/TestSelect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/eosi/b32023/test/TestUpdate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/db.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eosi/b32023/dal/FournisseurDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eosi/b32023/dal/FournisseurDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eosi/b32023/dal/FournisseurJDBCDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eosi/b32023/dal/FournisseurJDBCDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/eosi/b32023/test/TestDelete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/eosi/b32023/test/TestDelete.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,24 +42,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.build.tools.auto.reload&quot;: &quot;ALL&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;build.tools&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.build.tools.auto.reload": "ALL",
+    "settings.editor.selected.configurable": "build.tools",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -86,7 +75,7 @@
       <workItem from="1674636762010" duration="161000" />
       <workItem from="1674637275375" duration="45000" />
       <workItem from="1674641263583" duration="89000" />
-      <workItem from="1676917187398" duration="3495000" />
+      <workItem from="1676917187398" duration="5600000" />
     </task>
     <servers />
   </component>

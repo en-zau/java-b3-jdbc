@@ -6,18 +6,17 @@ import java.sql.SQLException;
 
 public class TestDelete {
 
-    Connection cnx;
-    PreparedStatement ps;
+    private Connection cnx;
+    private PreparedStatement ps;
 
-    TestDelete(Connection cnx, PreparedStatement ps){
+    public TestDelete(Connection cnx, PreparedStatement ps) {
         this.cnx = cnx;
         this.ps = ps;
     }
 
-    public int TD(String nom) throws SQLException {
-        ps.setString(1, nom);
-        int nbDelete = ps.executeUpdate();
-        System.out.println(nbDelete);
-        return nbDelete;
+    public void TDEL(int id) throws SQLException {
+        ps.setInt(1, id);
+        int nbDeleted = ps.executeUpdate();
+        System.out.println(nbDeleted + " lignes supprimées !");
     }
 }

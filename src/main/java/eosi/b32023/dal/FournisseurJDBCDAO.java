@@ -13,13 +13,13 @@ public class FournisseurJDBCDAO implements FournisseurDAO {
     private static final String INSERT_QUERY = "INSERT INTO fournisseur (NOM) VALUES (?)";
     private static final String UPDATE_QUERY = "UPDATE fournisseur SET NOM = ? WHERE NOM = ?";
     private static final String DB_URL;
-    private static final String DB_USER;
+    private static final String DB_LOGIN;
     private static final String DB_PWD;
 
     static {
         ResourceBundle bundle = ResourceBundle.getBundle( "db" );
         DB_URL = bundle.getString( "db.url" );
-        DB_USER = bundle.getString( "db.user" );
+        DB_LOGIN = bundle.getString( "db.user" );
         DB_PWD = bundle.getString( "db.password" );
     }
 
@@ -27,7 +27,7 @@ public class FournisseurJDBCDAO implements FournisseurDAO {
     public List<Fournisseur> extraire() throws SQLException {
         List<Fournisseur> fournisseurs = new ArrayList<>();
         //Try avec ressources
-        try ( Connection cnx = DriverManager.getConnection( DB_URL, DB_USER, DB_PWD );
+        try ( Connection cnx = DriverManager.getConnection( DB_URL, DB_LOGIN, DB_PWD );
               PreparedStatement ps = cnx.prepareStatement(SELECT_QUERY);
               ResultSet rs = ps.executeQuery()) {
             System.out.println(cnx);
@@ -44,7 +44,7 @@ public class FournisseurJDBCDAO implements FournisseurDAO {
 
     @Override
     public void insert( Fournisseur fournisseur ) throws SQLException {
-        try ( Connection cnx = DriverManager.getConnection( DB_URL, DB_USER, DB_PWD );
+        try ( Connection cnx = DriverManager.getConnection( DB_URL, DB_LOGIN, DB_PWD );
               PreparedStatement ps = cnx.prepareStatement(INSERT_QUERY)) {
             ps.setString(1, fournisseur.getNom());
             //Insertion en base
@@ -55,7 +55,7 @@ public class FournisseurJDBCDAO implements FournisseurDAO {
     @Override
     public int update( String ancienNom, String nouveauNom ) throws SQLException {
         int nb = 0;
-        try ( Connection cnx = DriverManager.getConnection( DB_URL, DB_USER, DB_PWD );
+        try ( Connection cnx = DriverManager.getConnection( DB_URL, DB_LOGIN, DB_PWD );
               PreparedStatement ps = cnx.prepareStatement(UPDATE_QUERY)) {
             ps.setString(1, nouveauNom);
             ps.setString(2, ancienNom);
@@ -66,7 +66,13 @@ public class FournisseurJDBCDAO implements FournisseurDAO {
     }
 
     @Override
-    public boolean delete(Fournisseur fournisseur) {
-        return false;
+    public boolean delete(Fournisseur fournisseur) throws SQLException {
+        String DELETE_QUERY = "DELETE FROM fournisseur WHERE ID = ?";
+        try (Connection cnx = DriverManager.getConnection(DB_URL, DB_LOGIN, DB_PWD);
+             PreparedStatement ps = cnx.prepareStatement(DELETE_QUERY)) {
+            ps.setInt(1, fournisseur.getId());
+            int nbRows = ps.executeUpdate();
+            return nbRows > 0;
+        }
     }
 }
