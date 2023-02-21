@@ -12,5 +12,5 @@ public interface FournisseurDAO {
 
     int update(String ancienNom, String nouveauNom) throws SQLException;
 
-    boolean delete(Fournisseur fournisseur) throws SQLException;
+    void deleteById(int fournisseurId) throws SQLException;
 }

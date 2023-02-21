@@ -12,6 +12,8 @@ public class FournisseurJDBCDAO implements FournisseurDAO {
     private static final String SELECT_QUERY = "SELECT * FROM fournisseur";
     private static final String INSERT_QUERY = "INSERT INTO fournisseur (NOM) VALUES (?)";
     private static final String UPDATE_QUERY = "UPDATE fournisseur SET NOM = ? WHERE NOM = ?";
+    private static final String DELETE_ID_QUERY = "DELETE FROM fournisseur WHERE ID=?";
+
     private static final String DB_URL;
     private static final String DB_LOGIN;
     private static final String DB_PWD;
@@ -65,14 +67,11 @@ public class FournisseurJDBCDAO implements FournisseurDAO {
         return nb;
     }
 
-    @Override
-    public boolean delete(Fournisseur fournisseur) throws SQLException {
-        String DELETE_QUERY = "DELETE FROM fournisseur WHERE ID = ?";
-        try (Connection cnx = DriverManager.getConnection(DB_URL, DB_LOGIN, DB_PWD);
-             PreparedStatement ps = cnx.prepareStatement(DELETE_QUERY)) {
-            ps.setInt(1, fournisseur.getId());
-            int nbRows = ps.executeUpdate();
-            return nbRows > 0;
+    public void deleteById(int fournisseurId) throws SQLException {
+        try ( Connection cnx = DriverManager.getConnection( DB_URL, DB_LOGIN, DB_PWD );
+              PreparedStatement ps = cnx.prepareStatement(DELETE_ID_QUERY)){
+            ps.setString(1, String.valueOf(fournisseurId));
+            ps.executeUpdate();
         }
     }
 }

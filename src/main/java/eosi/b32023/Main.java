@@ -1,10 +1,12 @@
 package eosi.b32023;
 
 import eosi.b32023.bo.Fournisseur;
+import eosi.b32023.dal.ArticleJDBCDAO;
 import eosi.b32023.dal.FournisseurDAO;
 import eosi.b32023.dal.FournisseurJDBCDAO;
 import eosi.b32023.test.TestDelete;
 import eosi.b32023.test.TestInserion;
+import eosi.b32023.test.TestJdbcArticle;
 import eosi.b32023.test.TestUpdate;
 
 import java.sql.*;
@@ -38,7 +40,7 @@ public class Main {
             // Créer une instance de FournisseurJDBCDAO
             FournisseurDAO fournisseurDAO = new FournisseurJDBCDAO();
 
-            // Extraire les fournisseurs et les afficher
+          // Extraire les fournisseurs et les afficher
             List<Fournisseur> fournisseurs = fournisseurDAO.extraire();
             for (Fournisseur f : fournisseurs) {
                 System.out.printf("id = %d ou alors %d - nom = %s %n", f.getId(), f.getId(), f.getNom());
@@ -55,14 +57,17 @@ public class Main {
             }
 
             // Test de suppression
-            TestDelete td = new TestDelete(cnx, psDelete);
-            td.TDEL(1);
+            TestDelete TD= new TestDelete();
+            TD.Delete(1);
 
             // Extraire les fournisseurs et les afficher
             fournisseurs = fournisseurDAO.extraire();
             for (Fournisseur f : fournisseurs) {
                 System.out.printf("id = %d ou alors %d - nom = %s %n", f.getId(), f.getId(), f.getNom());
             }
+
+            TestJdbcArticle test = new TestJdbcArticle(new FournisseurJDBCDAO(), new ArticleJDBCDAO());
+            test.insert();
 
         } catch (SQLException e) {
             throw new RuntimeException(e);

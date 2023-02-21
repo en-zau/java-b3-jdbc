@@ -4,19 +4,17 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+
+import eosi.b32023.dal.FournisseurJDBCDAO;
+
+import java.sql.SQLException;
+
 public class TestDelete {
-
-    private Connection cnx;
-    private PreparedStatement ps;
-
-    public TestDelete(Connection cnx, PreparedStatement ps) {
-        this.cnx = cnx;
-        this.ps = ps;
+    private final FournisseurJDBCDAO fournisseurJDBCDAO;
+    public TestDelete() {
+        this.fournisseurJDBCDAO = new FournisseurJDBCDAO();
     }
-
-    public void TDEL(int id) throws SQLException {
-        ps.setInt(1, id);
-        int nbDeleted = ps.executeUpdate();
-        System.out.println(nbDeleted + " lignes supprimées !");
+    public void Delete(int fournisseurId) throws SQLException {
+        this.fournisseurJDBCDAO.deleteById(fournisseurId);
     }
 }
